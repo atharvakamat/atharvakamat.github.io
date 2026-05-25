@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!entry.isIntersecting) {
                 return;
             } else {
-                entry.target.classList.add('active');
+                entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
         });
