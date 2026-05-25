@@ -2,7 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
     // 2. Intersection Observer for scroll-reveal animations
     const revealElements = document.querySelectorAll('.reveal');
@@ -14,9 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const revealOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
+            if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
@@ -27,10 +26,41 @@ document.addEventListener('DOMContentLoaded', () => {
         revealOnScroll.observe(el);
     });
 
-    // 3. Intersection Observer for active nav links
+    // 3. Navigation Logic
+    const nav = document.querySelector('.nav');
+    const navToggle = document.querySelector('.nav__toggle');
+    const navLinksList = document.querySelector('.nav__links');
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.querySelectorAll('.nav__link');
 
+    // Mobile Menu Toggle
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('open');
+            navLinksList.classList.toggle('open');
+            document.body.style.overflow = navLinksList.classList.contains('open') ? 'hidden' : '';
+        });
+    }
+
+    // Close mobile menu on link click
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle?.classList.remove('open');
+            navLinksList?.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Scroll Background Change
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // Intersection Observer for active nav links
     const navOptions = {
         threshold: 0.3,
         rootMargin: "-100px 0px -100px 0px"
@@ -61,11 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let width = canvas.width = window.innerWidth;
         let height = canvas.height = window.innerHeight;
         
-        // Track mouse position
         let mouse = { x: width / 2, y: height / 2 };
-        // Array to store previous positions for the trail
         let points = [];
-        const MAX_POINTS = 20;
+        const MAX_POINTS = 24;
 
         window.addEventListener('resize', () => {
             width = canvas.width = window.innerWidth;
@@ -76,35 +104,28 @@ document.addEventListener('DOMContentLoaded', () => {
             mouse.x = e.clientX;
             mouse.y = e.clientY;
             
-            // Add new point
             points.push({ x: mouse.x, y: mouse.y, age: 0 });
             if (points.length > MAX_POINTS) {
-                points.shift(); // Remove oldest point
+                points.shift();
             }
         });
 
         function animate() {
             ctx.clearRect(0, 0, width, height);
 
-            // Draw the trail
             for (let i = 0; i < points.length; i++) {
                 const p = points[i];
                 p.age += 1;
                 
-                // Calculate opacity based on age (fades out)
-                const life = 1 - (p.age / 30); // 30 frames lifetime roughly
+                const life = 1 - (p.age / 40);
                 
                 if (life > 0) {
-                    const radius = 150 * life; // Size shrinks slightly
-                    
-                    // Create radial gradient for the heat effect
+                    const radius = 180 * life;
                     const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius);
                     
-                    // Warm amber/green mix
-                    // Using rgba to allow transparency
-                    gradient.addColorStop(0, `rgba(212, 168, 67, ${0.1 * life})`); // Amber center
-                    gradient.addColorStop(0.5, `rgba(58, 107, 82, ${0.05 * life})`); // Green mid
-                    gradient.addColorStop(1, 'rgba(20, 20, 24, 0)'); // Transparent edge (matches bg roughly)
+                    gradient.addColorStop(0, `rgba(212, 168, 67, ${0.12 * life})`); 
+                    gradient.addColorStop(0.4, `rgba(58, 107, 82, ${0.06 * life})`);
+                    gradient.addColorStop(1, 'rgba(20, 20, 24, 0)');
 
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
@@ -113,9 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // Remove dead points
-            points = points.filter(p => p.age < 30);
-
+            points = points.filter(p => p.age < 40);
             requestAnimationFrame(animate);
         }
 

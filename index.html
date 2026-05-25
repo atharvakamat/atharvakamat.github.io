@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Personal Website</title>
-    <meta name="description" content="Academic personal website for Atharva S. Kamat, PhD Candidate at Princeton University.">
+    <meta name="description" content="Academic personal website for [Your Name], [Your Affiliation].">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,47 +19,59 @@
 </head>
 <body>
     <!-- Cursor Trail Canvas -->
-    <canvas id="cursor-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;"></canvas>
+    <canvas id="cursor-canvas"></canvas>
 
     <!-- Navigation -->
-    <nav class="site-nav">
-        <div class="nav-container">
-            <a href="#about" class="nav-logo">A.S.K.</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#cv">CV</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+    <nav class="nav">
+        <a href="#about" class="nav__logo">A.S.K.</a>
+        <button class="nav__toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links">
+            <li><a href="#about" class="nav__link active">About</a></li>
+            <li><a href="#research" class="nav__link">Research</a></li>
+            <li><a href="#publications" class="nav__link">Publications</a></li>
+            <li><a href="#cv" class="nav__link">CV</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
     </nav>
 
     <main>
-        <!-- About Section (Combined with Hero) -->
-        <section id="about" class="section reveal">
-            <!-- Subtle Mondrian Background -->
-            <div class="mondrian-bg">
-                <div class="mondrian-block block-1"></div>
-                <div class="mondrian-block block-2"></div>
-                <div class="mondrian-block block-3"></div>
+        <!-- About Section -->
+        <section id="about" class="about reveal">
+            <!-- Mondrian Geometric Background -->
+            <div class="mondrian">
+                <div class="mondrian__block mondrian__block--1"></div>
+                <div class="mondrian__block mondrian__block--2"></div>
+                <div class="mondrian__block mondrian__block--3"></div>
+                <div class="mondrian__block mondrian__block--4"></div>
+                <div class="mondrian__block mondrian__block--5"></div>
+                <div class="mondrian__block mondrian__block--6"></div>
+                <div class="mondrian__block mondrian__block--7"></div>
             </div>
 
             <div class="container">
-                <div class="about-grid">
-                    <div class="about-content">
-                        <h1 class="hero-name">[Your Name]</h1>
-                        <p class="hero-title">[Your Title/Position]</p>
-                        <p class="hero-affiliation">[Your Institution/Affiliation]</p>
-                        
-                        <div class="bio-text">
-                            
-                        </div>
+                <div class="about__content">
+                    <div class="about__intro">
+                        <h1 class="about__name">[Your Full Name]</h1>
+                        <p class="about__title">[Your Profession / Ph.D. Candidate]</p>
+                        <p class="about__affiliation">[Your Institution & Department]</p>
                     </div>
-                    <div class="about-photo">
-                        <!-- Placeholder for photo -->
-                        <div class="photo-placeholder">
-                            <span>Photo Placeholder<br>(Drop image here)</span>
+                    
+                    <div class="about__grid">
+                        <div class="about__bio">
+                            <p style="font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--accent-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Professional Profile</p>
+                            <p>I am a researcher specializing in [Your Field] at [Your Institution]. My work focuses on [Brief summary of your core research area, e.g., developing scalable algorithms for complex systems].</p>
+                            <p>Previously, I completed my studies at [Previous Institution] where I explored [Previous Topic]. I am passionate about bridging the gap between theoretical research and practical applications.</p>
+                        </div>
+                        <div class="about__interests">
+                            <p style="font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--accent-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Research Interests</p>
+                            <ul style="list-style: none; color: var(--text-secondary); font-size: var(--fs-sm);">
+                                <li style="margin-bottom: 0.5rem;">• [Core Interest 1: E.g., Computational Modeling]</li>
+                                <li style="margin-bottom: 0.5rem;">• [Core Interest 2: E.g., Data Analysis]</li>
+                                <li style="margin-bottom: 0.5rem;">• [Core Interest 3: E.g., Machine Learning]</li>
+                                <li style="margin-bottom: 0.5rem;">• [Core Interest 4: E.g., Theoretical Physics]</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -69,22 +81,39 @@
         <!-- Research Section -->
         <section id="research" class="section reveal">
             <div class="container">
-                <h2 class="section-title">Research Areas</h2>
-                <div class="research-grid">
-                    <!-- Research Card 1 -->
+                <div class="section__header">
+                    <p class="section__label">Projects</p>
+                    <h2 class="section__title">Research & Initiatives</h2>
+                </div>
+                
+                <div class="research__grid">
+                    <!-- Project 1 -->
                     <div class="research-card">
-                        <h3>[Area 1]</h3>
-                        <p>...</p>
+                        <h3 class="research-card__title">[Project One: Strategic Algorithm Design]</h3>
+                        <p class="research-card__desc">Investigating the dynamics of [system] using novel [methodology]. This research aims to address the limitations of current approaches by [key innovation].</p>
+                        <div class="research-card__tags">
+                            <span class="research-card__tag">Algorithm</span>
+                            <span class="research-card__tag">Optimization</span>
+                        </div>
                     </div>
-                    <!-- Research Card 2 -->
+                    <!-- Project 2 -->
                     <div class="research-card">
-                        <h3>[Area 2]</h3>
-                        <p>...</p>
+                        <h3 class="research-card__title">[Project Two: Multi-Scale Analysis]</h3>
+                        <p class="research-card__desc">Applying machine learning techniques to analyze large-scale datasets in [domain]. Our findings have implications for [practical application].</p>
+                        <div class="research-card__tags">
+                            <span class="research-card__tag">Data</span>
+                            <span class="research-card__tag">Machine Learning</span>
+                        </div>
                     </div>
-                    <!-- Research Card 3 -->
-                    <div class="research-card">
-                        <h3>[Area 3]</h3>
-                        <p>...</p>
+                    <!-- Research Theme -->
+                    <div class="research-card research-card--theme">
+                        <h3 class="research-card__title">Research Themes</h3>
+                        <p class="research-card__desc">Core focus areas that bridge multiple projects and establish the long-term vision of my academic career.</p>
+                        <ul style="list-style: none; font-size: var(--fs-xs); color: var(--text-secondary); margin-top: 1rem;">
+                            <li style="margin-bottom: 0.5rem;">• Computational Fluid Dynamics</li>
+                            <li style="margin-bottom: 0.5rem;">• Structural Integrity Analysis</li>
+                            <li style="margin-bottom: 0.5rem;">• Predictive Modeling</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -93,70 +122,71 @@
         <!-- Publications Section -->
         <section id="publications" class="section reveal">
             <div class="container">
-                <h2 class="section-title">Selected Publications</h2>
+                <div class="section__header">
+                    <p class="section__label">Bibliography</p>
+                    <h2 class="section__title">Selected Publications</h2>
+                </div>
                 
-                <div class="pub-list">
-                    <!-- Publication Item -->
-                    <div class="pub-item">
-                        <div class="pub-year">2026</div>
-                        <div class="pub-details">
-                            <div class="pub-authors">[Author 1], [Author 2], and <strong>[Your Name]</strong>.</div>
-                            <a href="#" class="pub-title">"[Title of the Most Recent Groundbreaking Paper]"</a>
-                            <div class="pub-venue"><em>[Journal or Conference Name]</em>.</div>
-                        </div>
-                    </div>
+                <div class="publications__list">
+                    <div class="pub-category">
+                        <h3 class="pub-category__title">Peer-reviewed Articles</h3>
+                        
+                        <div class="pub-entries">
+                            <div class="pub-entry">
+                                <span class="pub-entry__year">2026</span>
+                                <div class="pub-entry__content">
+                                    <span class="pub-entry__authors">[Author 1], [Author 2], and <strong>[Your Name]</strong>.</span>
+                                    <h4 class="pub-entry__title"><a href="#">"[Title of the Most Recent Groundbreaking Paper]"</a></h4>
+                                    <span class="pub-entry__venue"><em>[Journal or Conference Name]</em>.</span>
+                                    <a href="#" class="pub-entry__link">DOI Link <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+                                </div>
+                            </div>
 
-                    <!-- Publication Item -->
-                    <div class="pub-item">
-                        <div class="pub-year">2025</div>
-                        <div class="pub-details">
-                            <div class="pub-authors"><strong>[Your Name]</strong> and [Collaborator].</div>
-                            <a href="#" class="pub-title">"[Title of an Important Previous Work]"</a>
-                            <div class="pub-venue"><em>[Journal or Conference Name]</em>.</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Publication Item -->
-                    <div class="pub-item">
-                        <div class="pub-year">2024</div>
-                        <div class="pub-details">
-                            <div class="pub-authors">[Lead Author], <strong>[Your Name]</strong>, and [Senior Author].</div>
-                            <a href="#" class="pub-title">"[Title of Foundational Research Paper]"</a>
-                            <div class="pub-venue"><em>[Journal or Conference Name]</em>.</div>
+                            <div class="pub-entry">
+                                <span class="pub-entry__year">2025</span>
+                                <div class="pub-entry__content">
+                                    <span class="pub-entry__authors"><strong>[Your Name]</strong> and [Collaborator].</span>
+                                    <h4 class="pub-entry__title"><a href="#">"[Title of an Important Previous Work]"</a></h4>
+                                    <span class="pub-entry__venue"><em>[Journal or Conference Name]</em>.</span>
+                                    <a href="#" class="pub-entry__link">Article Link <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <p style="margin-top: 2rem; font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--text-secondary);">
-                    See full list on <a href="#" style="color: var(--accent-amber);">Google Scholar</a>.
-                </p>
             </div>
         </section>
 
         <!-- CV Section -->
         <section id="cv" class="section reveal">
             <div class="container">
-                <div class="cv-content" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 3rem;">
-                    <div>
-                        <h2 class="section-title" style="margin-bottom: 1rem;">Curriculum Vitae</h2>
-                        <p style="color: var(--text-secondary);">Last updated: [Month, Year]</p>
-                    </div>
-                    <a href="assets/cv.pdf" class="button" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                <div class="section__header">
+                    <p class="section__label">Resume</p>
+                    <h2 class="section__title">Experience & Education</h2>
                 </div>
                 
-                <div class="cv-highlights" style="margin-top: 3rem;">
-                    <h3 style="font-family: var(--font-heading); font-size: var(--fs-lg); margin-bottom: 1.5rem;">Education</h3>
-                    <ul style="list-style-type: none;">
-                        <li style="margin-bottom: 1rem;">
-                            <strong>Ph.D. in [Field]</strong> — [University], [Year]
-                        </li>
-                        <li style="margin-bottom: 1rem;">
-                            <strong>M.S. in [Field]</strong> — [University], [Year]
-                        </li>
-                        <li>
-                            <strong>B.S. in [Field]</strong> — [University], [Year]
-                        </li>
-                    </ul>
+                <div class="cv__content">
+                    <div class="cv__text">
+                        <p>A summary of my academic journey and professional experiences. For a detailed look, please download the full CV below.</p>
+                        <a href="assets/cv.pdf" class="cv__download">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                            Download CV (PDF)
+                        </a>
+                    </div>
+                    <div class="cv__timeline" style="flex: 2; min-width: 300px;">
+                        <div style="border-left: 1px solid var(--border); padding-left: 1.5rem; position: relative;">
+                            <div style="margin-bottom: 2rem;">
+                                <p style="font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--accent-amber); margin-bottom: 0.25rem;">2023 — Present</p>
+                                <h4 style="font-weight: 500; color: var(--text-primary);">[Current Position]</h4>
+                                <p style="font-size: var(--fs-sm); color: var(--text-tertiary);">[Institution Name]</p>
+                            </div>
+                            <div style="margin-bottom: 2rem;">
+                                <p style="font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-secondary); margin-bottom: 0.25rem;">2021 — 2023</p>
+                                <h4 style="font-weight: 500; color: var(--text-primary);">[Previous Position]</h4>
+                                <p style="font-size: var(--fs-sm); color: var(--text-tertiary);">[Institution Name]</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -164,27 +194,54 @@
         <!-- Contact Section -->
         <section id="contact" class="section reveal">
             <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Please feel free to reach out for collaborations or inquiries.</p>
+                <div class="section__header">
+                    <p class="section__label">Connection</p>
+                    <h2 class="section__title">Get in Touch</h2>
+                </div>
                 
-                <div class="contact-info">
-                    <p style="margin-bottom: 1rem;">
-                        <span style="font-family: var(--font-mono); color: var(--accent-green);">Email:</span><br>
-                        <a href="mailto:atharva.kamat@princeton.edu" style="color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--accent-amber);">atharva.kamat@princeton.edu</a>
-                    </p>
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <div class="contact__item">
+                            <svg class="contact__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <div>
+                                <p class="contact__label">Email</p>
+                                <p class="contact__value"><a href="mailto:email@institution.edu">email@institution.edu</a></p>
+                            </div>
+                        </div>
+                        <div class="contact__item">
+                            <svg class="contact__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div>
+                                <p class="contact__label">Office</p>
+                                <p class="contact__value">[Building], [Room Number]<br>[Institution Name]</p>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div class="social-links" style="display: flex; gap: 1.5rem;">
-                        <a href="#" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber); text-decoration: none;">Google Scholar</a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber); text-decoration: none;">ORCID</a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber); text-decoration: none;">LinkedIn</a>
+                    <div class="contact__profiles">
+                        <p class="contact__label" style="margin-bottom: 0.5rem;">Academic Profiles</p>
+                        <a href="#" class="profile-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.45l8.15 14.1H3.85L12 5.45z"/></svg>
+                            Google Scholar
+                        </a>
+                        <a href="#" class="profile-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm-3-11v2h6v-2h-6z"/></svg>
+                            ORCID
+                        </a>
+                        <a href="#" class="profile-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            LinkedIn
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--text-tertiary); font-size: var(--fs-sm); margin-top: 4rem;">
-        <p>&copy; <span id="current-year"></span> Atharva Kamat</p>
+    <footer class="footer">
+        <div class="container footer__content">
+            <p class="footer__text">&copy; <span id="current-year"></span> [Your Name]. All rights reserved.</p>
+            <p class="footer__text" style="opacity: 0.5;">International Style — Academic Edition</p>
+        </div>
     </footer>
 
     <!-- Scripts -->
