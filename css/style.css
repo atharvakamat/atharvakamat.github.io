@@ -21,26 +21,27 @@ html {
 /* --- Design Tokens ----------------------------------------- */
 :root {
   /* Backgrounds */
-  --bg-primary:      #141418;
-  --bg-surface:      #1c1c22;
-  --bg-elevated:     #24242c;
+  --bg-page:         #23342B; /* Deep forest green page background */
+  --bg-primary:      #1A1A1E; /* Dark charcoal center block */
+  --bg-surface:      #212126; /* Slightly lighter surface for cards */
+  --bg-elevated:     #2A2A32;
 
   /* Accents */
   --accent-green:       #3a6b52;
   --accent-green-muted: #2d4a3e;
   --accent-green-faint: rgba(58, 107, 82, 0.12);
-  --accent-amber:       #d4a843;
-  --accent-amber-muted: #a6842f;
-  --accent-amber-faint: rgba(212, 168, 67, 0.10);
+  --accent-amber:       #E0AD4A; /* Warmer, brighter amber from mockup */
+  --accent-amber-muted: #B3883A;
+  --accent-amber-faint: rgba(224, 173, 74, 0.10);
 
   /* Text */
-  --text-primary:   #e8e6e1;
-  --text-secondary: #9a9690;
-  --text-tertiary:  #6b6762;
+  --text-primary:   #F0EFEA;
+  --text-secondary: #A3A09A;
+  --text-tertiary:  #75726C;
 
   /* Borders */
-  --border:        #2a2a32;
-  --border-accent: #3a3a44;
+  --border:        rgba(255,255,255,0.08);
+  --border-accent: rgba(255,255,255,0.15);
 
   /* Typography */
   --font-body:    'Inter', system-ui, -apple-system, sans-serif;
@@ -49,13 +50,13 @@ html {
 
   /* Fluid type scale */
   --fs-xs:   clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
-  --fs-sm:   clamp(0.8rem, 0.75rem + 0.25vw, 0.9rem);
-  --fs-base: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
-  --fs-md:   clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
-  --fs-lg:   clamp(1.4rem, 1.2rem + 1vw, 1.8rem);
-  --fs-xl:   clamp(1.8rem, 1.5rem + 1.5vw, 2.5rem);
-  --fs-2xl:  clamp(2.2rem, 1.8rem + 2vw, 3.2rem);
-  --fs-3xl:  clamp(2.8rem, 2.2rem + 3vw, 4rem);
+  --fs-sm:   clamp(0.85rem, 0.8rem + 0.25vw, 0.95rem);
+  --fs-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+  --fs-md:   clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+  --fs-lg:   clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --fs-xl:   clamp(2rem, 1.8rem + 1.5vw, 2.8rem);
+  --fs-2xl:  clamp(2.5rem, 2.2rem + 2vw, 3.5rem);
+  --fs-3xl:  clamp(3rem, 2.5rem + 3vw, 4.5rem);
 
   /* Spacing */
   --space-xs:  0.5rem;
@@ -67,8 +68,8 @@ html {
   --space-section: clamp(5rem, 4rem + 6vw, 9rem);
 
   /* Layout */
-  --max-width: 1120px;
-  --nav-height: 3.5rem;
+  --max-width: 960px; /* Narrower to match the vertical 'block' feel */
+  --nav-height: 4rem;
 
   /* Animation */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -83,8 +84,20 @@ body {
   font-size: var(--fs-base);
   line-height: 1.7;
   color: var(--text-primary);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-page);
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* The central text block */
+.site-wrapper {
+  width: 100%;
+  max-width: 1080px;
+  background-color: var(--bg-primary);
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  position: relative;
   min-height: 100vh;
 }
 
@@ -102,7 +115,7 @@ body {
 
 /* --- Navigation -------------------------------------------- */
 .nav {
-  position: fixed;
+  position: absolute; /* Changed from fixed so it stays in the wrapper context initially */
   top: 0;
   left: 0;
   right: 0;
@@ -112,17 +125,20 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(1.5rem, 3vw, 3rem);
-  background: rgba(20, 20, 24, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: transparent;
   border-bottom: 1px solid transparent;
   transition: border-color var(--duration-normal) ease,
               background var(--duration-normal) ease;
 }
 
 .nav.scrolled {
+  position: fixed;
+  max-width: 1080px; /* Match wrapper width */
+  margin: 0 auto;
   border-bottom-color: var(--border);
-  background: rgba(20, 20, 24, 0.92);
+  background: rgba(26, 26, 30, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .nav__logo {
