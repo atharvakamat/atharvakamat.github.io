@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Personal Website</title>
+    <meta name="description" content="Academic personal website for Atharva S. Kamat, PhD Candidate at Princeton University.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+    <!-- Cursor Trail Canvas -->
+    <canvas id="cursor-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;"></canvas>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="#about" class="nav-logo">A.S.K.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- About Section (Combined with Hero) -->
+        <section id="about" class="section reveal">
+            <!-- Subtle Mondrian Background -->
+            <div class="mondrian-bg">
+                <div class="mondrian-block block-1"></div>
+                <div class="mondrian-block block-2"></div>
+                <div class="mondrian-block block-3"></div>
+            </div>
+
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h1 class="hero-name">[Your Name]</h1>
+                        <p class="hero-title">[Your Title/Position]</p>
+                        <p class="hero-affiliation">[Your Institution/Affiliation]</p>
+                        
+                        <div class="bio-text">
+                            
+                        </div>
+                    </div>
+                    <div class="about-photo">
+                        <!-- Placeholder for photo -->
+                        <div class="photo-placeholder">
+                            <span>Photo Placeholder<br>(Drop image here)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section reveal">
+            <div class="container">
+                <h2 class="section-title">Research Areas</h2>
+                <div class="research-grid">
+                    <!-- Research Card 1 -->
+                    <div class="research-card">
+                        <h3>[Area 1]</h3>
+                        <p>...</p>
+                    </div>
+                    <!-- Research Card 2 -->
+                    <div class="research-card">
+                        <h3>[Area 2]</h3>
+                        <p>...</p>
+                    </div>
+                    <!-- Research Card 3 -->
+                    <div class="research-card">
+                        <h3>[Area 3]</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section reveal">
+            <div class="container">
+                <h2 class="section-title">Selected Publications</h2>
+                
+                <div class="pub-list">
+                    <!-- Publication Item -->
+                    <div class="pub-item">
+                        <div class="pub-year">2026</div>
+                        <div class="pub-details">
+                            <div class="pub-authors">[Author 1], [Author 2], and <strong>[Your Name]</strong>.</div>
+                            <a href="#" class="pub-title">"[Title of the Most Recent Groundbreaking Paper]"</a>
+                            <div class="pub-venue"><em>[Journal or Conference Name]</em>.</div>
+                        </div>
+                    </div>
+
+                    <!-- Publication Item -->
+                    <div class="pub-item">
+                        <div class="pub-year">2025</div>
+                        <div class="pub-details">
+                            <div class="pub-authors"><strong>[Your Name]</strong> and [Collaborator].</div>
+                            <a href="#" class="pub-title">"[Title of an Important Previous Work]"</a>
+                            <div class="pub-venue"><em>[Journal or Conference Name]</em>.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Publication Item -->
+                    <div class="pub-item">
+                        <div class="pub-year">2024</div>
+                        <div class="pub-details">
+                            <div class="pub-authors">[Lead Author], <strong>[Your Name]</strong>, and [Senior Author].</div>
+                            <a href="#" class="pub-title">"[Title of Foundational Research Paper]"</a>
+                            <div class="pub-venue"><em>[Journal or Conference Name]</em>.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 2rem; font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--text-secondary);">
+                    See full list on <a href="#" style="color: var(--accent-amber);">Google Scholar</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv" class="section reveal">
+            <div class="container">
+                <div class="cv-content" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 3rem;">
+                    <div>
+                        <h2 class="section-title" style="margin-bottom: 1rem;">Curriculum Vitae</h2>
+                        <p style="color: var(--text-secondary);">Last updated: [Month, Year]</p>
+                    </div>
+                    <a href="assets/cv.pdf" class="button" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                </div>
+                
+                <div class="cv-highlights" style="margin-top: 3rem;">
+                    <h3 style="font-family: var(--font-heading); font-size: var(--fs-lg); margin-bottom: 1.5rem;">Education</h3>
+                    <ul style="list-style-type: none;">
+                        <li style="margin-bottom: 1rem;">
+                            <strong>Ph.D. in [Field]</strong> — [University], [Year]
+                        </li>
+                        <li style="margin-bottom: 1rem;">
+                            <strong>M.S. in [Field]</strong> — [University], [Year]
+                        </li>
+                        <li>
+                            <strong>B.S. in [Field]</strong> — [University], [Year]
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section reveal">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Please feel free to reach out for collaborations or inquiries.</p>
+                
+                <div class="contact-info">
+                    <p style="margin-bottom: 1rem;">
+                        <span style="font-family: var(--font-mono); color: var(--accent-green);">Email:</span><br>
+                        <a href="mailto:atharva.kamat@princeton.edu" style="color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--accent-amber);">atharva.kamat@princeton.edu</a>
+                    </p>
+                    
+                    <div class="social-links" style="display: flex; gap: 1.5rem;">
+                        <a href="#" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber); text-decoration: none;">Google Scholar</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber); text-decoration: none;">ORCID</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" style="color: var(--accent-amber); text-decoration: none;">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--text-tertiary); font-size: var(--fs-sm); margin-top: 4rem;">
+        <p>&copy; <span id="current-year"></span> Atharva Kamat</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
