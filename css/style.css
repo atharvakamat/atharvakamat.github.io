@@ -21,7 +21,7 @@ html {
 /* --- Design Tokens ----------------------------------------- */
 :root {
   /* Backgrounds */
-  --bg-page:         #228B22; /* forest green page background */
+  --bg-page:         #639163; /* forest green page background */
   --bg-primary:      #1A1A1E; /* Dark charcoal center block */
   --bg-surface:      #212126; /* Slightly lighter surface for cards */
   --bg-elevated:     #2A2A32;
