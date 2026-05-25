@@ -1,2 +1,2 @@
-# atharvaskamat.github.io
+# atharvakamat.github.io
 Personal Academic Website
