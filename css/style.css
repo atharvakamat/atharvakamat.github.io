@@ -21,7 +21,7 @@ html {
 /* --- Design Tokens ----------------------------------------- */
 :root {
   /* Backgrounds */
-  --bg-page:         #2A4235; /* Deep forest green page background */
+  --bg-page:         #228B22; /* forest green page background */
   --bg-primary:      #1A1A1E; /* Dark charcoal center block */
   --bg-surface:      #212126; /* Slightly lighter surface for cards */
   --bg-elevated:     #2A2A32;
@@ -36,7 +36,7 @@ html {
 
   /* Text */
   --text-primary:   #F0EFEA;
-  --text-secondary: #A3A09A;
+  --text-primary: #A3A09A;
   --text-tertiary:  #75726C;
 
   /* Borders */
@@ -144,7 +144,7 @@ body {
 .nav__logo {
   font-family: var(--font-mono);
   font-size: var(--fs-sm);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   text-decoration: none;
   letter-spacing: 0.08em;
   transition: color var(--duration-fast) ease;
@@ -211,7 +211,7 @@ body {
   left: 0;
   width: 100%;
   height: 1.5px;
-  background: var(--text-secondary);
+  background: var(--text-primary);
   transition: all var(--duration-normal) var(--ease-out-expo);
 }
 
@@ -349,7 +349,7 @@ body {
 
 .about__name {
   font-family: var(--font-heading);
-  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  font-size: var(--fs-xl);
   font-weight: 500;
   color: var(--text-primary);
   line-height: 0.95;
@@ -360,7 +360,7 @@ body {
 .about__title {
   font-family: var(--font-heading);
   font-size: var(--fs-xl);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-style: italic;
   margin-bottom: var(--space-xs);
 }
@@ -403,7 +403,7 @@ body {
 }
 
 .about__bio {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   line-height: 1.8;
   max-width: 540px;
 }
@@ -479,7 +479,7 @@ body {
 
 .research-card__desc {
   font-size: var(--fs-sm);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   line-height: 1.7;
   flex: 1;
 }
@@ -597,7 +597,7 @@ body {
 
 .pub-entry__authors {
   font-size: var(--fs-sm);
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .pub-entry__venue {
@@ -643,7 +643,7 @@ body {
 }
 
 .cv__text p {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin-bottom: var(--space-md);
   line-height: 1.7;
 }
@@ -710,12 +710,12 @@ body {
 }
 
 .contact__value {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: var(--fs-sm);
 }
 
 .contact__value a {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   text-decoration: none;
   transition: color var(--duration-fast) ease;
 }
@@ -734,7 +734,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   text-decoration: none;
   font-size: var(--fs-sm);
   transition: color var(--duration-fast) ease;
