@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Intersection Observer for scroll-reveal animations
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     const revealOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
     };
 
-    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+    const revealOnScroll = new IntersectionObserver(function (entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = canvas.getContext('2d');
         let width = canvas.width = window.innerWidth;
         let height = canvas.height = window.innerHeight;
-        
+
         let mouse = { x: width / 2, y: height / 2 };
         let points = [];
         const MAX_POINTS = 24;
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('mousemove', (e) => {
             mouse.x = e.clientX;
             mouse.y = e.clientY;
-            
+
             points.push({ x: mouse.x, y: mouse.y, age: 0 });
             if (points.length > MAX_POINTS) {
                 points.shift();
@@ -116,14 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i < points.length; i++) {
                 const p = points[i];
                 p.age += 1;
-                
+
                 const life = 1 - (p.age / 40);
-                
+
                 if (life > 0) {
                     const radius = 180 * life;
                     const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius);
-                    
-                    gradient.addColorStop(0, `rgba(212, 168, 67, ${0.12 * life})`); 
+
+                    gradient.addColorStop(0, `rgba(212, 168, 67, ${0.12 * life})`);
                     gradient.addColorStop(0.4, `rgba(58, 107, 82, ${0.06 * life})`);
                     gradient.addColorStop(1, 'rgba(20, 20, 24, 0)');
 
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ctx.fill();
                 }
             }
-            
+
             points = points.filter(p => p.age < 40);
             requestAnimationFrame(animate);
         }
